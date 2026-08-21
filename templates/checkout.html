@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-md-8">
+
+        <div class="card shadow">
+
+            <div class="card-header bg-danger text-white">
+
+                <h4 class="mb-0">
+                    📝 Complete Order
+                </h4>
+
+            </div>
+
+
+            <div class="card-body">
+
+                <div class="border-bottom pb-3 mb-3">
+
+                    <h5>
+                        {{ product.name }}
+                    </h5>
+
+                    <p class="h4 text-danger">
+                        ₹{{ product.price }}
+                    </p>
+
+                    <p>
+                        ❤️ {{ product.likes }} Total Likes
+                        •
+                        {{ product.days }} Days
+                    </p>
+
+                </div>
+
+
+                <form method="POST" action="/order">
+
+                    <input
+                        type="hidden"
+                        name="plan"
+                        value="{{ plan }}"
+                    >
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Free Fire UID
+                        </label>
+
+                        <input
+                            type="text"
+                            name="uid"
+                            class="form-control"
+                            placeholder="Enter your Free Fire UID"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Region
+                        </label>
+
+                        <select
+                            name="region"
+                            class="form-control"
+                            required
+                        >
+
+                            <option value="ind">
+                                🇮🇳 India
+                            </option>
+
+                            <option value="id">
+                                🇮🇩 Indonesia
+                            </option>
+
+                            <option value="br">
+                                🇧🇷 Brazil
+                            </option>
+
+                            <option value="sg">
+                                🇸🇬 Singapore
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Telegram Username (Optional)
+                        </label>
+
+                        <input
+                            type="text"
+                            name="telegram"
+                            class="form-control"
+                            placeholder="@yourusername"
+                        >
+
+                    </div>
+
+
+                    <div class="alert alert-info">
+
+                        <strong>
+                            Pay via UPI:
+                        </strong>
+
+                        your@upi
+
+                        <br>
+
+                        <small>
+                            Contact @Ksa_kabir for payment
+                        </small>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-success w-100 btn-lg"
+                    >
+                        ✅ Place Order - ₹{{ product.price }}
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
