@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="text-center py-5">
+
+    <div class="alert alert-success p-4">
+
+        <h2>
+            ✅ Order Placed Successfully!
+        </h2>
+
+    </div>
+
+
+    <div class="card p-4 shadow">
+
+        <h4>
+            📋 Order Details
+        </h4>
+
+        <p>
+            <strong>UID:</strong>
+            {{ uid }}
+        </p>
+
+        <p>
+            <strong>Region:</strong>
+            {{ region }}
+        </p>
+
+        <p>
+            <strong>Plan:</strong>
+            {{ plan.name }}
+        </p>
+
+        <p>
+            <strong>Days:</strong>
+            {{ plan.days }}
+        </p>
+
+        <p>
+            <strong>Total Likes:</strong>
+            {{ plan.likes }}
+        </p>
+
+        <p>
+            ⏰ Likes will start at 4:30 AM daily!
+        </p>
+
+    </div>
+
+
+    <div class="mt-4">
+
+        <p>
+            📞 Contact:
+            <strong>@Ksa_kabir</strong>
+        </p>
+
+        <a href="/" class="btn btn-primary">
+            🏠 Back to Home
+        </a>
+
+        <a href="/shop" class="btn btn-danger">
+            🛒 Buy More
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
